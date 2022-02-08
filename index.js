@@ -2,7 +2,7 @@
 const cards = document.querySelectorAll('.memory-card');
 let count = 0
 let array = []
-let arrScore = []
+let arrScore = [0]
 
 
 let hasFlippedCard = false;
