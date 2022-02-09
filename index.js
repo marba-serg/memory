@@ -1,16 +1,25 @@
 
 const cards = document.querySelectorAll('.memory-card');
+const score = document.querySelector('.score')
 let count = 0
 let array = []
-let arrScore = [0]
+let arrScore = []
+let arrStorage = JSON.stringify(arrScore)
+
+
+if (localStorage.getItem('score1') === null) {
+  localStorage.setItem('score1', arrStorage)
+}
+
 
 
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
-
+console.table(count)
 function flipCard() {
   count++
+  console.table(count)
   if (lockBoard) return;
   if (this === firstCard) return;
 
@@ -19,7 +28,8 @@ function flipCard() {
   arr = [...cards].map(card => card.classList.contains('flip'))
   if (arr.every(el => el === true)) {
     arrScore = JSON.parse(localStorage.getItem('score1'))
-    if (arrScore.length === 4) {
+
+    if (arrScore.length === 10) {
       arrScore.push(count)
       arrScore.shift()
 
@@ -75,3 +85,14 @@ function resetBoard() {
 })();
 
 cards.forEach(card => card.addEventListener('click', flipCard));
+let tableScore = JSON.parse(localStorage.getItem('score1'))
+tableScore = tableScore.sort((a, b) => a - b)
+
+for (i = 0; i < tableScore.length; i++) {
+  let div = document.createElement("div")
+  score.append(div)
+  div.innerHTML = `№${i + 1}  Score = ${tableScore[i]}`
+}
+
+console.log(JSON.parse(localStorage.getItem('score1')))
+
