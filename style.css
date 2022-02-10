@@ -11,10 +11,17 @@ body {
   justify-content: center;
   background: #060ab2;
 }
+
 h1 {
   text-align: center;
   color: white;
   margin-bottom: 20px;
+}
+
+.present-score {
+  text-align: center;
+  color: white;
+  margin-bottom: 18px;
 }
 
 .score {
@@ -27,6 +34,7 @@ h1 {
   width: 660px;
   flex-wrap: wrap;
 }
+
 .score div {
   margin-right: 10px;
   border: 1px solid white;

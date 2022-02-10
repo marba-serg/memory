@@ -1,6 +1,7 @@
 
 const cards = document.querySelectorAll('.memory-card');
 const score = document.querySelector('.score')
+const presentScore = document.querySelector('.present-score')
 let count = 0
 let array = []
 let arrScore = []
@@ -28,7 +29,7 @@ function flipCard() {
   arr = [...cards].map(card => card.classList.contains('flip'))
   if (arr.every(el => el === true)) {
     arrScore = JSON.parse(localStorage.getItem('score1'))
-
+presentScore.innerHTML = `Your Score: ${count}pt`
     if (arrScore.length === 10) {
       arrScore.push(count)
       arrScore.shift()
