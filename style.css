@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+root {
+  --text-color: black;
+}
+
 
 * {
   padding: 0;
@@ -12,26 +16,29 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #060ab2;
+  flex-direction: column;
+  background: #e3e7aa;
   font-family: 'Inter',
     sans-serif;
 }
 
 h1 {
   text-align: center;
-  color: white;
+  color: var(--text-color);
   margin-bottom: 30px;
   font-size: 26px;
 }
 
 .present-score {
   text-align: center;
-  color: white;
+  color: var(--text-color);
+  ;
   margin-bottom: 18px;
 }
 
 .score {
-  color: white;
+  color: var(--text-color);
+  ;
   font-size: 18px;
   display: flex;
   align-items: center;
@@ -43,7 +50,7 @@ h1 {
 
 .score div {
   margin-right: 10px;
-  border: 1px solid white;
+  border: 1px solid black;
   padding: 5px;
   margin-bottom: 10px;
 }
@@ -65,6 +72,7 @@ h1 {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   transform-style: preserve-3d;
   transition: transform 0.5s;
+  cursor: pointer;
 }
 
 .front-face,
@@ -99,4 +107,59 @@ h1 {
 
 .memory-card.flip {
   transform: rotateY(180deg);
+}
+
+/**************** FOOTER **********************/
+.footer-wrap {
+  display: flex;
+  background-color: black;
+  height: 8vh;
+  border-radius: 0 0 30px 30px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 50px;
+  width: 630px;
+}
+
+.footer-git-wrap {
+  color: white;
+}
+
+.footer-git-wrap span {
+  margin-right: 20px;
+}
+
+.footer .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-rs-wrap img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rss {
+  height: 40px;
+}
+
+
+.rss:hover,
+.git-link:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+  transition: 0.3s;
+}
+
+.git-link,
+.rs-link {
+  text-decoration: none;
+  transition: color 0.5s;
+  color: white;
 }
